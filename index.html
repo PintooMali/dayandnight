@@ -1,0 +1,59 @@
+<!doctype HTML>
+<html>
+<head>
+    <title>Stary Niight and Day Animation Effect</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="scene">
+        <div class="moon" onclick="toggleScene()"></div>
+            <img src="forest.png" class="forest">
+            <img src="bg.png" class="bg">
+            <img src="cloud1.png" class="cloud1">
+            <img src="cloud2.png" class="cloud2">
+            <img src="cloud3.png" class="cloud3">
+            <img src="forest.png" class="forest">
+            <img src="cloud1.png" class="cloud4">
+            <img src="cloud2.png" class="cloud5">
+            <img src="cloud3.png" class="cloud6">
+            
+            
+        </div>
+        <script>
+            function toggleScene()
+            {
+                let change=document.querySelector('.scene');
+                change.classList.toggle('active');
+            }
+            function stars()
+            {
+                 let cout=500;
+                 let i=0;
+                while(i<cout){
+                    let scene = document.querySelector('.scene');
+                    let star = document.createElement('span');
+                    let x = Math.floor(Math.random()*window.innerWidth);
+                    let y = Math.floor(Math.random()*window.innerHeight);
+                    let size = Math.random()*2;
+                    let duration = Math.random()*10;
+                    
+                     star.style.left=x+'px';
+                     star.style.top=y+'px';
+                     star.style.width=size+'px';
+                     star.style.height=size+'px';
+                     star.style.animationDuration = 5+duration+'s';
+                     star.style.animationDelay = duration+'s';
+                    
+                     scene.appendChild(star);
+                     i++;
+            }
+            }
+                stars();
+        </script>
+    
+    
+    
+    </body>
+
+
+</html>
